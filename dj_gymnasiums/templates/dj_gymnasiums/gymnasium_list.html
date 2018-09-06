@@ -1,0 +1,15 @@
+{% for gymnasium in gymnasium_list %}
+  {% if forloop.first %}
+    <ul>
+  {% endif %}
+
+  <li>
+    <a href="{% url 'dj-gymnasiums:detail' gymnasium.id %}">{{ gymnasium }}</a>
+  </li>
+
+  {% if forloop.last %}
+    </ul>
+  {% endif %}
+{% empty %}
+  <p>No gymnasium...</p>
+{% endfor %}

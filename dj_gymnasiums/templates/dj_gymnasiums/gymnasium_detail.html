@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+<h1>Gymnasium {{ gymnasium.name }}</h1>
+
+<p>Address: {{ gymnasium.address }}</p>
+<p>ZIP code: {{ gymnasium.zip_code }}</p>
+<p>City: {{ gymnasium.city }}</p>
+
+{% if gymnasium.phone %}
+  <p>Phone: {{ gymnasium.phone }}</p>
+{% endif %}
+{% if gymnasium.surface %}
+  <p>Surface: {{ gymnasium.surface }}</p>
+{% endif %}
+{% if gymnasium.capacity %}
+  <p>Capacity: {{ gymnasium.capacity }} people</p>
+{% endif %}
