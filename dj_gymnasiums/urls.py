@@ -24,10 +24,10 @@ urlpatterns = [
          ),
     path("<int:pk>/update",
          view=views.GymnasiumUpdateView.as_view(),
-         name='post-update',
+         name='update',
          ),
     path("<int:pk>/delete",
          view=views.GymnasiumDeleteView.as_view(),
-         name='post-delete',
+         name='delete',
          )
 ]

@@ -39,6 +39,6 @@ class Gymnasium(models.Model):
     class Meta:
         """Meta class."""
 
-        verbose_name = _("VCN account")
-        verbose_name_plural = _("VCN accounts")
+        verbose_name = _("gymnasium")
+        verbose_name_plural = _("gymnasiums")
         ordering = ("name", "city")

@@ -8,7 +8,7 @@ test_dj-sponsoring
 Tests for `dj-sponsoring` apps module.
 """
 
-from dj_gymnasiums.apps import DjNewsletterConfig
+from dj_gymnasiums.apps import DjGymnasiumsConfig
 
 from django.apps import apps
 from django.test import TestCase
@@ -17,5 +17,5 @@ from django.test import TestCase
 class TestApps(TestCase):
 
     def test_apps(self):
-        self.assertEqual(DjNewsletterConfig.name, 'dj_gymnasiums')
+        self.assertEqual(DjGymnasiumsConfig.name, 'dj_gymnasiums')
         self.assertEqual(apps.get_app_config('dj_gymnasiums').name, 'dj_gymnasiums')

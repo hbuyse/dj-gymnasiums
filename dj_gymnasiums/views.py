@@ -39,14 +39,14 @@ class GymnasiumCreateView(CreateView):
 
     def get(self, request, *args, **kwargs):
         """."""
-        if not request.user.is_superuser or not request.user.is_staff:
+        if True not in [request.user.is_superuser, request.user.is_staff]:
             raise PermissionDenied
 
         return super().get(request, args, kwargs)
 
     def post(self, request, *args, **kwargs):
         """."""
-        if not request.user.is_superuser or not request.user.is_staff:
+        if True not in [request.user.is_superuser, request.user.is_staff]:
             raise PermissionDenied
 
         return super().post(request, args, kwargs)
@@ -65,14 +65,15 @@ class GymnasiumUpdateView(UpdateView):
 
     def get(self, request, *args, **kwargs):
         """."""
-        if not request.user.is_superuser or not request.user.is_staff:
+        if True not in [request.user.is_superuser, request.user.is_staff]:
+
             raise PermissionDenied
 
         return super().get(request, args, kwargs)
 
     def post(self, request, *args, **kwargs):
         """."""
-        if not request.user.is_superuser or not request.user.is_staff:
+        if True not in [request.user.is_superuser, request.user.is_staff]:
             raise PermissionDenied
 
         return super().post(request, args, kwargs)
@@ -90,14 +91,14 @@ class GymnasiumDeleteView(DeleteView):
 
     def get(self, request, *args, **kwargs):
         """."""
-        if not request.user.is_superuser or not request.user.is_staff:
+        if True not in [request.user.is_superuser, request.user.is_staff]:
             raise PermissionDenied
 
         return super().get(request, args, kwargs)
 
     def post(self, request, *args, **kwargs):
         """."""
-        if not request.user.is_superuser or not request.user.is_staff:
+        if True not in [request.user.is_superuser, request.user.is_staff]:
             raise PermissionDenied
 
         return super().post(request, args, kwargs)
@@ -105,4 +106,4 @@ class GymnasiumDeleteView(DeleteView):
     def get_success_url(self, **kwargs):
         """Get the URL after the success."""
         messages.success(self.request, "Gymnasium '{}' deleted successfully".format(self.object.name))
-        return reverse('dj_gymnasiums:Gymnasiums-list')
+        return reverse('dj-gymnasiums:list')
