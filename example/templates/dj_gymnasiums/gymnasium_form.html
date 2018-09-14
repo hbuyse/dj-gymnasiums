@@ -6,7 +6,7 @@
 <nav aria-label="breadcrumb">
   <ol class="breadcrumb">
     <li class="breadcrumb-item"><a href="{% url 'home' %}">Accueil</a></li>
-    <li class="breadcrumb-item"><a href="{% url 'gymnasiums:list' %}">Gymnases</a></li>
+    <li class="breadcrumb-item"><a href="{% url 'dj-gymnasiums:list' %}">Gymnases</a></li>
     {% if 'create' in request.path %}
     <li class="breadcrumb-item active" aria-current="page">Création</li>
     {% elif 'update' in request.path %}
