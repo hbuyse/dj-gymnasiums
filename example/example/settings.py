@@ -18,12 +18,11 @@ LOGGING = {
     'formatters': {
         'console': {
             # exact format is not important, this is the minimum information
-            'format': '%(asctime)s - %(name)-12s:%(lineno)d - %(levelname)s - %(message)s',
+            'format': '%(asctime)s - %(name)s:%(lineno)d - %(levelname)s - %(message)s',
         },
         'json': {
             'format': '%(asctime)s' \
                       '%(name)s' \
-                      '%(funcName)s' \
                       '%(lineno)s' \
                       '%(levelname)s' \
                       '%(message)s',
@@ -69,8 +68,6 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'bootstrap4',
-
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -82,6 +79,8 @@ INSTALLED_APPS = [
 
     # if your app has other dependencies that need to be added to the site
     # they should be added here
+    'bootstrap4',
+    'django_icons',
 ]
 
 MIDDLEWARE = [
@@ -156,7 +155,7 @@ USE_L10N = True
 USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/2.0/howto/static-files/
+# https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
 # STATIC_ROOT = os.path.join(BASE_DIR, "static")
