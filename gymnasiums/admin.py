@@ -3,7 +3,7 @@
 from django.contrib import admin
 
 # Register your models here.
-from .models import Gymnasium
+from gymnasiums.models import Gymnasium
 
 
 @admin.register(Gymnasium)

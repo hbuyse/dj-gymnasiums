@@ -13,7 +13,7 @@ from django.views.generic import (
     UpdateView,
 )
 
-from .models import (
+from gymnasiums.models import (
     Gymnasium
 )
 

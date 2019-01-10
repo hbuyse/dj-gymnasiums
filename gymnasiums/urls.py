@@ -5,7 +5,7 @@
 
 from django.urls import path
 
-from . import views
+from gymnasiums import views
 
 
 app_name = 'gymnasiums'
