@@ -1,9 +1,9 @@
 #!/usr/bin/env python
 # coding=utf-8
 
-"""Tests for `dj-gymnasiums` models module."""
+"""Tests for `gymnasiums` models module."""
 
-from dj_gymnasiums.models import Gymnasium
+from gymnasiums.models import Gymnasium
 
 from django.test import TestCase
 

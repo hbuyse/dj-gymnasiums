@@ -7,7 +7,7 @@ from django.contrib.auth import get_user_model
 from django.test import TestCase
 from django.urls import reverse
 
-from dj_gymnasiums.models import (
+from gymnasiums.models import (
     Gymnasium
 )
 
@@ -17,7 +17,7 @@ class TestGymnasiumCreateViewAsAnonymous(TestCase):
 
     def test_get(self):
         """Tests."""
-        r = self.client.get(reverse('dj-gymnasiums:create'))
+        r = self.client.get(reverse('gymnasiums:create'))
 
         self.assertEqual(r.status_code, 403)
 
@@ -32,7 +32,7 @@ class TestGymnasiumCreateViewAsAnonymous(TestCase):
             'surface': '123',
             'capacity': '456',
         }
-        r = self.client.post(reverse('dj-gymnasiums:create'), d)
+        r = self.client.post(reverse('gymnasiums:create'), d)
 
         self.assertEqual(r.status_code, 403)
 
@@ -53,7 +53,7 @@ class TestGymnasiumCreateViewAsLogged(TestCase):
     def test_get(self):
         """Tests."""
         self.assertTrue(self.client.login(username=self.dict['username'], password=self.dict['password']))
-        r = self.client.get(reverse('dj-gymnasiums:create'))
+        r = self.client.get(reverse('gymnasiums:create'))
 
         self.assertEqual(r.status_code, 403)
 
@@ -69,7 +69,7 @@ class TestGymnasiumCreateViewAsLogged(TestCase):
             'capacity': '456',
         }
         self.assertTrue(self.client.login(username=self.dict['username'], password=self.dict['password']))
-        r = self.client.post(reverse('dj-gymnasiums:create'), d)
+        r = self.client.post(reverse('gymnasiums:create'), d)
 
         self.assertEqual(r.status_code, 403)
 
@@ -91,7 +91,7 @@ class TestGymnasiumCreateViewAsStaff(TestCase):
     def test_get(self):
         """Tests."""
         self.assertTrue(self.client.login(username=self.dict['username'], password=self.dict['password']))
-        r = self.client.get(reverse('dj-gymnasiums:create'))
+        r = self.client.get(reverse('gymnasiums:create'))
 
         self.assertEqual(r.status_code, 200)
 
@@ -108,7 +108,7 @@ class TestGymnasiumCreateViewAsStaff(TestCase):
         }
 
         self.assertTrue(self.client.login(username=self.dict['username'], password=self.dict['password']))
-        r = self.client.post(reverse('dj-gymnasiums:create'), d)
+        r = self.client.post(reverse('gymnasiums:create'), d)
 
         self.assertEqual(r.status_code, 302)
         g = Gymnasium.objects.last()
@@ -132,7 +132,7 @@ class TestGymnasiumCreateViewAsSuperuser(TestCase):
     def test_get(self):
         """Tests."""
         self.assertTrue(self.client.login(username=self.dict['username'], password=self.dict['password']))
-        r = self.client.get(reverse('dj-gymnasiums:create'))
+        r = self.client.get(reverse('gymnasiums:create'))
 
         self.assertEqual(r.status_code, 200)
 
@@ -149,7 +149,7 @@ class TestGymnasiumCreateViewAsSuperuser(TestCase):
         }
 
         self.assertTrue(self.client.login(username=self.dict['username'], password=self.dict['password']))
-        r = self.client.post(reverse('dj-gymnasiums:create'), d)
+        r = self.client.post(reverse('gymnasiums:create'), d)
 
         self.assertEqual(r.status_code, 302)
         g = Gymnasium.objects.last()

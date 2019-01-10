@@ -4,7 +4,7 @@
   {% endif %}
 
   <li>
-    <a href="{% url 'dj-gymnasiums:detail' gymnasium.id %}">{{ gymnasium }}</a>
+    <a href="{% url 'gymnasiums:detail' gymnasium.id %}">{{ gymnasium }}</a>
   </li>
 
   {% if forloop.last %}

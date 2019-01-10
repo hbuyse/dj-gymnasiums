@@ -8,7 +8,7 @@ from django.urls import path
 from . import views
 
 
-app_name = 'dj-gymnasiums'
+app_name = 'gymnasiums'
 urlpatterns = [
     path("",
          view=views.GymnasiumListView.as_view(),

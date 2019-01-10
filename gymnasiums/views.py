@@ -54,7 +54,7 @@ class GymnasiumCreateView(CreateView):
     def get_success_url(self):
         """Get the URL after the success."""
         messages.success(self.request, "Gymnasium '{}' added successfully".format(self.object.name))
-        return reverse('dj-gymnasiums:detail', kwargs={'pk': self.object.id})
+        return reverse('gymnasiums:detail', kwargs={'pk': self.object.id})
 
 
 class GymnasiumUpdateView(UpdateView):
@@ -81,7 +81,7 @@ class GymnasiumUpdateView(UpdateView):
     def get_success_url(self):
         """Get the URL after the success."""
         messages.success(self.request, "Gymnasium '{}' updated successfully".format(self.object.name))
-        return reverse('dj-gymnasiums:detail', kwargs={'pk': self.object.id})
+        return reverse('gymnasiums:detail', kwargs={'pk': self.object.id})
 
 
 class GymnasiumDeleteView(DeleteView):
@@ -106,4 +106,4 @@ class GymnasiumDeleteView(DeleteView):
     def get_success_url(self, **kwargs):
         """Get the URL after the success."""
         messages.success(self.request, "Gymnasium '{}' deleted successfully".format(self.object.name))
-        return reverse('dj-gymnasiums:list')
+        return reverse('gymnasiums:list')

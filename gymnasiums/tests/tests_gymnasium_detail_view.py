@@ -7,7 +7,7 @@ from django.contrib.auth import get_user_model
 from django.test import TestCase
 from django.urls import reverse
 
-from dj_gymnasiums.models import (
+from gymnasiums.models import (
     Gymnasium
 )
 
@@ -29,7 +29,7 @@ class TestVcnAccountDetailViewAsAnonymous(TestCase):
 
     def test_get(self):
         """Tests."""
-        r = self.client.get(reverse('dj-gymnasiums:detail', kwargs={'pk': self.gymnasium.id}))
+        r = self.client.get(reverse('gymnasiums:detail', kwargs={'pk': self.gymnasium.id}))
         self.assertEqual(r.status_code, 200)
 
 
@@ -57,7 +57,7 @@ class TestVcnAccountDetailViewAsLogged(TestCase):
 
     def test_get(self):
         """Tests."""
-        r = self.client.get(reverse('dj-gymnasiums:detail', kwargs={'pk': self.gymnasium.id}))
+        r = self.client.get(reverse('gymnasiums:detail', kwargs={'pk': self.gymnasium.id}))
         self.assertEqual(r.status_code, 200)
 
 
@@ -87,7 +87,7 @@ class TestVcnAccountDetailViewAsStaff(TestCase):
     def test_get(self):
         """Tests."""
         self.assertTrue(self.client.login(username=self.dict['username'], password=self.dict['password']))
-        r = self.client.get(reverse('dj-gymnasiums:detail', kwargs={'pk': self.gymnasium.id}))
+        r = self.client.get(reverse('gymnasiums:detail', kwargs={'pk': self.gymnasium.id}))
 
         self.assertEqual(r.status_code, 200)
 
@@ -118,6 +118,6 @@ class TestVcnAccountDetailViewAsSuperuser(TestCase):
     def test_get(self):
         """Tests."""
         self.assertTrue(self.client.login(username=self.dict['username'], password=self.dict['password']))
-        r = self.client.get(reverse('dj-gymnasiums:detail', kwargs={'pk': self.gymnasium.id}))
+        r = self.client.get(reverse('gymnasiums:detail', kwargs={'pk': self.gymnasium.id}))
 
         self.assertEqual(r.status_code, 200)

@@ -7,7 +7,7 @@ from django.contrib.auth import get_user_model
 from django.test import TestCase
 from django.urls import reverse
 
-from dj_gymnasiums.models import (
+from gymnasiums.models import (
     Gymnasium
 )
 
@@ -30,7 +30,7 @@ class TestGymnasiumUpdateViewAsAnonymous(TestCase):
 
     def test_get(self):
         """Tests."""
-        r = self.client.get(reverse('dj-gymnasiums:update', kwargs={'pk': self.gymnasium.id}))
+        r = self.client.get(reverse('gymnasiums:update', kwargs={'pk': self.gymnasium.id}))
 
         self.assertEqual(r.status_code, 403)
 
@@ -38,7 +38,7 @@ class TestGymnasiumUpdateViewAsAnonymous(TestCase):
         """Tests."""
         self.gymnasium_data['name'] = 'Watteau2'
 
-        r = self.client.post(reverse('dj-gymnasiums:update', kwargs={'pk': self.gymnasium.id}), self.gymnasium_data)
+        r = self.client.post(reverse('gymnasiums:update', kwargs={'pk': self.gymnasium.id}), self.gymnasium_data)
 
         self.assertEqual(r.status_code, 403)
 
@@ -70,7 +70,7 @@ class TestGymnasiumUpdateViewAsLogged(TestCase):
     def test_get(self):
         """Tests."""
         self.assertTrue(self.client.login(username=self.dict['username'], password=self.dict['password']))
-        r = self.client.get(reverse('dj-gymnasiums:update', kwargs={'pk': self.gymnasium.id}))
+        r = self.client.get(reverse('gymnasiums:update', kwargs={'pk': self.gymnasium.id}))
 
         self.assertEqual(r.status_code, 403)
 
@@ -79,7 +79,7 @@ class TestGymnasiumUpdateViewAsLogged(TestCase):
         self.gymnasium_data['name'] = 'Watteau2'
 
         self.assertTrue(self.client.login(username=self.dict['username'], password=self.dict['password']))
-        r = self.client.post(reverse('dj-gymnasiums:update', kwargs={'pk': self.gymnasium.id}), self.gymnasium_data)
+        r = self.client.post(reverse('gymnasiums:update', kwargs={'pk': self.gymnasium.id}), self.gymnasium_data)
 
         self.assertEqual(r.status_code, 403)
 
@@ -112,7 +112,7 @@ class TestGymnasiumUpdateViewAsStaff(TestCase):
     def test_get(self):
         """Tests."""
         self.assertTrue(self.client.login(username=self.dict['username'], password=self.dict['password']))
-        r = self.client.get(reverse('dj-gymnasiums:update', kwargs={'pk': self.gymnasium.id}))
+        r = self.client.get(reverse('gymnasiums:update', kwargs={'pk': self.gymnasium.id}))
 
         self.assertEqual(r.status_code, 200)
 
@@ -121,7 +121,7 @@ class TestGymnasiumUpdateViewAsStaff(TestCase):
         self.gymnasium_data['name'] = 'Watteau2'
 
         self.assertTrue(self.client.login(username=self.dict['username'], password=self.dict['password']))
-        r = self.client.post(reverse('dj-gymnasiums:update', kwargs={'pk': self.gymnasium.id}), self.gymnasium_data)
+        r = self.client.post(reverse('gymnasiums:update', kwargs={'pk': self.gymnasium.id}), self.gymnasium_data)
 
         self.assertEqual(r.status_code, 302)
         self.assertEqual("/{}".format(self.gymnasium.id), r.url)
@@ -155,7 +155,7 @@ class TestGymnasiumUpdateViewAsSuperuser(TestCase):
     def test_get(self):
         """Tests."""
         self.assertTrue(self.client.login(username=self.dict['username'], password=self.dict['password']))
-        r = self.client.get(reverse('dj-gymnasiums:update', kwargs={'pk': self.gymnasium.id}))
+        r = self.client.get(reverse('gymnasiums:update', kwargs={'pk': self.gymnasium.id}))
 
         self.assertEqual(r.status_code, 200)
 
@@ -164,7 +164,7 @@ class TestGymnasiumUpdateViewAsSuperuser(TestCase):
         self.gymnasium_data['name'] = 'Watteau2'
 
         self.assertTrue(self.client.login(username=self.dict['username'], password=self.dict['password']))
-        r = self.client.post(reverse('dj-gymnasiums:update', kwargs={'pk': self.gymnasium.id}), self.gymnasium_data)
+        r = self.client.post(reverse('gymnasiums:update', kwargs={'pk': self.gymnasium.id}), self.gymnasium_data)
 
         self.assertEqual(r.status_code, 302)
         self.assertEqual("/{}".format(self.gymnasium.id), r.url)

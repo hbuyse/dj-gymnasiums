@@ -13,7 +13,7 @@ USE_TZ = True
 SECRET_KEY = "o1c_83_n_-@)i3rtc@t%yds_@rmksc$mlfj-0s1@yk68_62fx@"
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 DATABASES = {
     "default": {
@@ -22,7 +22,7 @@ DATABASES = {
     }
 }
 
-ROOT_URLCONF = "tests.urls"
+ROOT_URLCONF = "gymnasiums.tests.urls"
 
 INSTALLED_APPS = [
     "django.contrib.auth",
@@ -30,7 +30,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     "django.contrib.sites",
     'markdownx',
-    "dj_gymnasiums",
+    "gymnasiums",
 ]
 
 TEMPLATES = [
@@ -62,4 +62,4 @@ MIDDLEWARE = (
     'django.contrib.messages.middleware.MessageMiddleware',
 )
 
-MEDIA_ROOT = '/tmp/dj_gymnasiums/media/'
+MEDIA_ROOT = '/tmp/gymnasiums/media/'
