@@ -81,6 +81,7 @@ INSTALLED_APPS = [
     # they should be added here
     'bootstrap4',
     'django_icons',
+    "example"
 ]
 
 MIDDLEWARE = [

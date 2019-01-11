@@ -11,10 +11,10 @@ from django.utils.translation import gettext_lazy as _
 class Gymnasium(models.Model):
     """User model for the website."""
 
-    name = models.CharField(_('Gymnasium name'), max_length=128)
-    address = models.CharField(_('Gymnasium address'), max_length=255)
-    city = models.CharField(_('Gymnasium city'), max_length=255)
-    zip_code = models.IntegerField(_('Gymnasium zip code'))
+    name = models.CharField(_('name'), max_length=128)
+    address = models.CharField(_('address'), max_length=255)
+    city = models.CharField(_('city'), max_length=255)
+    zip_code = models.IntegerField(_('zip code'))
     phone = models.CharField(
         _('phone number'),
         max_length=10,
@@ -29,8 +29,8 @@ class Gymnasium(models.Model):
                            message=_("This is not a correct phone number"))
         ]
     )
-    surface = models.SmallIntegerField(_('gymnasium surface'), blank=True, null=True)
-    capacity = models.SmallIntegerField(_('gymnasium capacity'), blank=True, null=True)
+    surface = models.SmallIntegerField(_('surface'), blank=True, null=True)
+    capacity = models.SmallIntegerField(_('capacity'), blank=True, null=True)
 
     def __str__(self):
         """Representation of a Gymnasium as a string."""

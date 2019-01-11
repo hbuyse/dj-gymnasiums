@@ -20,7 +20,7 @@
   {% for g in gymnasium_list %}
     <div class="card">
       <h5 class="card-header">
-        {{ g }}
+        {{ g.name }}
       </h5>
       <div class="card-body">
         <p class="card-text">
@@ -38,3 +38,7 @@
   {% endfor %}
   </div>
 {% endblock %}
+
+{% block javascript %}
+
+{% endblock javascript %}
