@@ -36,8 +36,6 @@ class Gymnasium(models.Model):
         return "Gymnasium {}".format(self.name)
 
     class Meta:
-        """Meta class."""
-
         verbose_name = _("gymnasium")
         verbose_name_plural = _("gymnasiums")
         ordering = ("name", "city")
