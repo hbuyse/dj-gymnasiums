@@ -8,10 +8,12 @@ test_dj-sponsoring
 Tests for `dj-sponsoring` apps module.
 """
 
-from gymnasiums.apps import GymnasiumsConfig
-
+# Django
 from django.apps import apps
 from django.test import TestCase
+
+# Current django project
+from gymnasiums.apps import GymnasiumsConfig
 
 
 class TestApps(TestCase):

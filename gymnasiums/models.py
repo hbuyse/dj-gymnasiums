@@ -1,11 +1,10 @@
 # -*- coding: utf-8 -*-
 """Django Newsletter model implementation."""
 
+# Django
 from django.core.validators import RegexValidator
 from django.db import models
-from django.utils.translation import gettext_lazy as _
-
-# Create your models here.
+from django.utils.translation import gettext_lazy as _  # noqa
 
 
 class Gymnasium(models.Model):

@@ -2,20 +2,14 @@
 
 """Views."""
 
+# Django
 from django.contrib import messages
 from django.core.exceptions import PermissionDenied
 from django.urls import reverse
-from django.views.generic import (
-    CreateView,
-    DeleteView,
-    DetailView,
-    ListView,
-    UpdateView,
-)
+from django.views.generic import CreateView, DeleteView, DetailView, ListView, UpdateView
 
-from gymnasiums.models import (
-    Gymnasium
-)
+# Current django project
+from gymnasiums.models import Gymnasium
 
 
 class GymnasiumListView(ListView):

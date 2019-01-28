@@ -3,13 +3,13 @@
 
 """Tests the views."""
 
+# Django
 from django.contrib.auth import get_user_model
 from django.test import TestCase
 from django.urls import reverse
 
-from gymnasiums.models import (
-    Gymnasium
-)
+# Current django project
+from gymnasiums.models import Gymnasium
 
 
 class TestGymnasiumListViewAsAnonymous(TestCase):

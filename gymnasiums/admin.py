@@ -1,8 +1,9 @@
 """..."""
 
+# Django
 from django.contrib import admin
 
-# Register your models here.
+# Current django project
 from gymnasiums.models import Gymnasium
 
 

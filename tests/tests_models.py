@@ -3,9 +3,11 @@
 
 """Tests for `gymnasiums` models module."""
 
-from gymnasiums.models import Gymnasium
-
+# Django
 from django.test import TestCase
+
+# Current django project
+from gymnasiums.models import Gymnasium
 
 
 class TestGymnasiumModel(TestCase):

@@ -1,6 +1,7 @@
 # -*- coding: utf-8
 """Representation of the gymnasiums application and its configuration."""
 
+# Django
 from django.apps import AppConfig
 
 

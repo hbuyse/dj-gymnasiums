@@ -8,8 +8,6 @@ language: python
 matrix:
   fast_finish: true
   include:
-    - python: 3.4
-      env: TOXENV=py34-django20
     - python: 3.5
       env: TOXENV=py35-django20
     - python: 3.5
@@ -18,14 +16,21 @@ matrix:
       env: TOXENV=py36-django20
     - python: 3.6
       env: TOXENV=py36-django21
+    - python: 3.7-dev
+      env: TOXENV=py37-django20
+    - python: 3.7-dev
+      env: TOXENV=py37-django21
     - python: 3.6
       env: TOXENV=flake8
+    - python: 3.6
+      env: TOXENV=isort
 
-# command to install dependencies, e.g. pip install -r requirements.txt --use-mirrors
-install: pip install -r requirements/test.txt
+install:
+  - pip install -r requirements/test.txt
 
 # command to run tests using coverage, e.g. python setup.py test
-script: tox -e $TOXENV
+script:
+  - tox -e $TOXENV
 
 after_success:
   - codecov -e TOXENV

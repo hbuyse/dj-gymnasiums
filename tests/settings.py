@@ -2,8 +2,10 @@
 
 """Settings for the tests."""
 
+# Future
 from __future__ import absolute_import, unicode_literals
 
+# Standard library
 import os
 
 DEBUG = False

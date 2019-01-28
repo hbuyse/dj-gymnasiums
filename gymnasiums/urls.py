@@ -3,10 +3,11 @@
 """urls for the dj-gymnasiums package."""
 
 
+# Django
 from django.urls import path
 
+# Current django project
 from gymnasiums import views
-
 
 app_name = 'gymnasiums'
 urlpatterns = [
