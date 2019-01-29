@@ -79,7 +79,7 @@ class GymnasiumUpdateView(UpdateView):
 
 
 class GymnasiumDeleteView(DeleteView):
-    """View that allows the deletion of a Gymnasium."""
+    """Delete of a Gymnasium."""
 
     model = Gymnasium
 
